@@ -33,7 +33,7 @@ function handle_msg(nick, chan, msg) {
   var func_name = msg_as_params.shift();
   var func = FUNCTIONS[func_name];
 
-  if (func.action != null) {
+  if (func != null && func.action != null) {
     console.log("> "+ func_name + " " + nick + " " + msg_as_params.join(" "));
     func.action(nick, msg_as_params);
   }
